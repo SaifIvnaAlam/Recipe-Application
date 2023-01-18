@@ -1,5 +1,7 @@
+import 'package:recipe_app/domain/category.dart';
+
 import '../categories.dart';
 
 abstract class ICategoriesRepository {
-  Future<List<Categories>> getCategories();
+  Future<Category> getCategories();
 }
