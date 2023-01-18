@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_app/application/meal_cubit/meals_cubit.dart';
+import 'package:recipe_app/presentation/pages/cooking/cooking_page.dart';
 
 class MealPage extends StatelessWidget {
   final String mealName;
@@ -25,9 +26,24 @@ class MealPage extends StatelessWidget {
                 final mealdata = meal.meals[index];
                 return Column(
                   children: [
-                    ListTile(
-                      leading: Image.network(mealdata.strMealThumb),
-                      title: Text(mealdata.strMeal),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CookingPage(
+                                    id: mealdata.idMeal,
+                                  )),
+                        );
+                      },
+                      child: ListTile(
+                        leading: Image.network(mealdata.strMealThumb),
+                        title: Row(
+                          children: [
+                            Text(mealdata.strMeal),
+                          ],
+                        ),
+                      ),
                     )
                   ],
                 );
