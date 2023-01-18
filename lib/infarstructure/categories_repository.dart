@@ -9,13 +9,13 @@ import '../domain/interface/i_categories_repository.dart';
 
 class CategoriesRepository implements ICategoriesRepository {
   @override
-  Future<Category> getCategories() async {
+  Future<CategoryList> getCategories() async {
     var baseUrl = "https://www.themealdb.com/api/json/v1/1/categories.php";
     var response = await http.get(Uri.parse(baseUrl));
     print(response.body);
 
     var data = jsonDecode(response.body);
-    var result = Category.fromJson(data);
+    var result = CategoryList.fromJson(data);
     return result;
   }
 }

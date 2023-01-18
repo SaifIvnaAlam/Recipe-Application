@@ -14,32 +14,33 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Category _$CategoryFromJson(Map<String, dynamic> json) {
-  return _Category.fromJson(json);
+CategoryList _$CategoryListFromJson(Map<String, dynamic> json) {
+  return _CategoryList.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Category {
+mixin _$CategoryList {
   List<Categories> get categories => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
+  $CategoryListCopyWith<CategoryList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
+abstract class $CategoryListCopyWith<$Res> {
+  factory $CategoryListCopyWith(
+          CategoryList value, $Res Function(CategoryList) then) =
+      _$CategoryListCopyWithImpl<$Res, CategoryList>;
   @useResult
   $Res call({List<Categories> categories});
 }
 
 /// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
+class _$CategoryListCopyWithImpl<$Res, $Val extends CategoryList>
+    implements $CategoryListCopyWith<$Res> {
+  _$CategoryListCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -61,21 +62,22 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
 }
 
 /// @nodoc
-abstract class _$$_CategoryCopyWith<$Res> implements $CategoryCopyWith<$Res> {
-  factory _$$_CategoryCopyWith(
-          _$_Category value, $Res Function(_$_Category) then) =
-      __$$_CategoryCopyWithImpl<$Res>;
+abstract class _$$_CategoryListCopyWith<$Res>
+    implements $CategoryListCopyWith<$Res> {
+  factory _$$_CategoryListCopyWith(
+          _$_CategoryList value, $Res Function(_$_CategoryList) then) =
+      __$$_CategoryListCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Categories> categories});
 }
 
 /// @nodoc
-class __$$_CategoryCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$_Category>
-    implements _$$_CategoryCopyWith<$Res> {
-  __$$_CategoryCopyWithImpl(
-      _$_Category _value, $Res Function(_$_Category) _then)
+class __$$_CategoryListCopyWithImpl<$Res>
+    extends _$CategoryListCopyWithImpl<$Res, _$_CategoryList>
+    implements _$$_CategoryListCopyWith<$Res> {
+  __$$_CategoryListCopyWithImpl(
+      _$_CategoryList _value, $Res Function(_$_CategoryList) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -83,7 +85,7 @@ class __$$_CategoryCopyWithImpl<$Res>
   $Res call({
     Object? categories = null,
   }) {
-    return _then(_$_Category(
+    return _then(_$_CategoryList(
       categories: null == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
@@ -94,12 +96,12 @@ class __$$_CategoryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Category implements _Category {
-  const _$_Category({required final List<Categories> categories})
+class _$_CategoryList implements _CategoryList {
+  const _$_CategoryList({required final List<Categories> categories})
       : _categories = categories;
 
-  factory _$_Category.fromJson(Map<String, dynamic> json) =>
-      _$$_CategoryFromJson(json);
+  factory _$_CategoryList.fromJson(Map<String, dynamic> json) =>
+      _$$_CategoryListFromJson(json);
 
   final List<Categories> _categories;
   @override
@@ -111,14 +113,14 @@ class _$_Category implements _Category {
 
   @override
   String toString() {
-    return 'Category(categories: $categories)';
+    return 'CategoryList(categories: $categories)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Category &&
+            other is _$_CategoryList &&
             const DeepCollectionEquality()
                 .equals(other._categories, _categories));
   }
@@ -131,27 +133,28 @@ class _$_Category implements _Category {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CategoryCopyWith<_$_Category> get copyWith =>
-      __$$_CategoryCopyWithImpl<_$_Category>(this, _$identity);
+  _$$_CategoryListCopyWith<_$_CategoryList> get copyWith =>
+      __$$_CategoryListCopyWithImpl<_$_CategoryList>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CategoryToJson(
+    return _$$_CategoryListToJson(
       this,
     );
   }
 }
 
-abstract class _Category implements Category {
-  const factory _Category({required final List<Categories> categories}) =
-      _$_Category;
+abstract class _CategoryList implements CategoryList {
+  const factory _CategoryList({required final List<Categories> categories}) =
+      _$_CategoryList;
 
-  factory _Category.fromJson(Map<String, dynamic> json) = _$_Category.fromJson;
+  factory _CategoryList.fromJson(Map<String, dynamic> json) =
+      _$_CategoryList.fromJson;
 
   @override
   List<Categories> get categories;
   @override
   @JsonKey(ignore: true)
-  _$$_CategoryCopyWith<_$_Category> get copyWith =>
+  _$$_CategoryListCopyWith<_$_CategoryList> get copyWith =>
       throw _privateConstructorUsedError;
 }

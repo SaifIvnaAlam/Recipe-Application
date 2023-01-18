@@ -19,21 +19,21 @@ mixin _$CategoriesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Category categories) loaded,
+    required TResult Function(CategoryList category) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(Category categories)? loaded,
+    TResult? Function(CategoryList category)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Category categories)? loaded,
+    TResult Function(CategoryList category)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -124,7 +124,7 @@ class _$_loading with DiagnosticableTreeMixin implements _loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Category categories) loaded,
+    required TResult Function(CategoryList category) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -134,7 +134,7 @@ class _$_loading with DiagnosticableTreeMixin implements _loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(Category categories)? loaded,
+    TResult? Function(CategoryList category)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -144,7 +144,7 @@ class _$_loading with DiagnosticableTreeMixin implements _loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Category categories)? loaded,
+    TResult Function(CategoryList category)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -198,7 +198,9 @@ abstract class _$$_loadedCopyWith<$Res> {
   factory _$$_loadedCopyWith(_$_loaded value, $Res Function(_$_loaded) then) =
       __$$_loadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({Category categories});
+  $Res call({CategoryList category});
+
+  $CategoryListCopyWith<$Res> get category;
 }
 
 /// @nodoc
@@ -211,28 +213,36 @@ class __$$_loadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = null,
+    Object? category = null,
   }) {
     return _then(_$_loaded(
-      null == categories
-          ? _value.categories
-          : categories // ignore: cast_nullable_to_non_nullable
-              as Category,
+      null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CategoryList,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CategoryListCopyWith<$Res> get category {
+    return $CategoryListCopyWith<$Res>(_value.category, (value) {
+      return _then(_value.copyWith(category: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_loaded with DiagnosticableTreeMixin implements _loaded {
-  const _$_loaded(this.categories);
+  const _$_loaded(this.category);
 
   @override
-  final Category categories;
+  final CategoryList category;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoriesState.loaded(categories: $categories)';
+    return 'CategoriesState.loaded(category: $category)';
   }
 
   @override
@@ -240,7 +250,7 @@ class _$_loaded with DiagnosticableTreeMixin implements _loaded {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'CategoriesState.loaded'))
-      ..add(DiagnosticsProperty('categories', categories));
+      ..add(DiagnosticsProperty('category', category));
   }
 
   @override
@@ -248,12 +258,12 @@ class _$_loaded with DiagnosticableTreeMixin implements _loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_loaded &&
-            (identical(other.categories, categories) ||
-                other.categories == categories));
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categories);
+  int get hashCode => Object.hash(runtimeType, category);
 
   @JsonKey(ignore: true)
   @override
@@ -265,32 +275,32 @@ class _$_loaded with DiagnosticableTreeMixin implements _loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Category categories) loaded,
+    required TResult Function(CategoryList category) loaded,
     required TResult Function() error,
   }) {
-    return loaded(categories);
+    return loaded(category);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(Category categories)? loaded,
+    TResult? Function(CategoryList category)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(categories);
+    return loaded?.call(category);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Category categories)? loaded,
+    TResult Function(CategoryList category)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(categories);
+      return loaded(category);
     }
     return orElse();
   }
@@ -331,9 +341,9 @@ class _$_loaded with DiagnosticableTreeMixin implements _loaded {
 }
 
 abstract class _loaded implements CategoriesState {
-  const factory _loaded(final Category categories) = _$_loaded;
+  const factory _loaded(final CategoryList category) = _$_loaded;
 
-  Category get categories;
+  CategoryList get category;
   @JsonKey(ignore: true)
   _$$_loadedCopyWith<_$_loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -382,7 +392,7 @@ class _$_error with DiagnosticableTreeMixin implements _error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Category categories) loaded,
+    required TResult Function(CategoryList category) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -392,7 +402,7 @@ class _$_error with DiagnosticableTreeMixin implements _error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(Category categories)? loaded,
+    TResult? Function(CategoryList category)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -402,7 +412,7 @@ class _$_error with DiagnosticableTreeMixin implements _error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Category categories)? loaded,
+    TResult Function(CategoryList category)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

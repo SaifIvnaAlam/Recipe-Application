@@ -16,13 +16,13 @@ class HomePage extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }, loaded: (value) {
-            final categories = value.categories.category;
+            final categories = value.category;
             return ListView.builder(
-              itemCount: categories.length,
+              itemCount: categories.categories.length,
               itemBuilder: (context, index) {
-                final giveaway = categories[index];
+                final giveaway = categories.categories[index];
 
-                return Text(giveaway.strCategoryDescription!);
+                return Text(giveaway.idCategory);
               },
             );
           }, error: (_) {
