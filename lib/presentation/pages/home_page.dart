@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<CategoriesCubit, CategoriesState>(
         builder: (context, state) {
           return state.map(loading: (_) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }, loaded: (value) {
@@ -22,7 +22,17 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 final giveaway = categories.categories[index];
 
-                return Text(giveaway.idCategory);
+                return Column(
+                  children: [
+                    ListTile(
+                      leading: Image.network(giveaway.strCategoryThumb),
+                      title: Text(
+                        giveaway.strCategory,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                );
               },
             );
           }, error: (_) {
