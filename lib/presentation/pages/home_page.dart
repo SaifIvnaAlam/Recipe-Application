@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_app/application/categories/cubit/categories_cubit.dart';
 import 'package:recipe_app/presentation/pages/meals/meal_page.dart';
+import 'package:recipe_app/presentation/util/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +11,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<CategoriesCubit>().getCategories();
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          "What are you having today?",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
       body: BlocBuilder<CategoriesCubit, CategoriesState>(
         builder: (context, state) {
           return state.map(loading: (_) {
@@ -27,33 +36,18 @@ class HomePage extends StatelessWidget {
                 return Column(
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
                               builder: (context) => MealPage(
-                                    mealName: name,
-                                  )),
-                        );
-                      },
-                      child: ListTile(
-                        leading: Image.network(ctgry.strCategoryThumb),
-                        title: Row(
-                          children: [
-                            Text(
-                              ctgry.strCategory,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
+                                mealName: name,
+                              ),
                             ),
-                            Text(
-                              ctgry.idCategory,
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    )
+                          );
+                        },
+                        child: ItemWidgets(
+                            image: ctgry.strCategoryThumb, name: name))
                   ],
                 );
               },
