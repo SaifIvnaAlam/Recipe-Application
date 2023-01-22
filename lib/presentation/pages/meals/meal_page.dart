@@ -40,7 +40,7 @@ class MealPage extends StatelessWidget {
                         leading: Image.network(mealdata.strMealThumb),
                         title: Row(
                           children: [
-                            Text(mealdata.strMeal),
+                            Expanded(child: Text(mealdata.strMeal)),
                           ],
                         ),
                       ),
@@ -50,7 +50,7 @@ class MealPage extends StatelessWidget {
               },
             );
           }, error: (_) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           });

@@ -5,14 +5,16 @@ part 'cooking_meals..g.dart';
 
 @freezed
 class CoockingMeal with _$CoockingMeal {
-  const factory CoockingMeal(
-      {required String idMeal,
-      required String idMstrMealThumbeal,
-      required String strInstructions}) = _CoockingMeal;
+  const factory CoockingMeal({
+    String? idMeal,
+    String? strMealThumb,
+    String? strInstructions,
+    String? strTags,
+  }) = _CoockingMeal;
 
   factory CoockingMeal.fromJson(Map<String, dynamic> json) =>
       _$CoockingMealFromJson(json);
 
-  factory CoockingMeal.empty() => const _CoockingMeal(
-      idMeal: "", idMstrMealThumbeal: "", strInstructions: "");
+  factory CoockingMeal.empty() =>
+      const _CoockingMeal(idMeal: "", strMealThumb: "", strInstructions: "");
 }

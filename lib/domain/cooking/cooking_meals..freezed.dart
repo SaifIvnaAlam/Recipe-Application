@@ -20,9 +20,10 @@ CoockingMeal _$CoockingMealFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CoockingMeal {
-  String get idMeal => throw _privateConstructorUsedError;
-  String get idMstrMealThumbeal => throw _privateConstructorUsedError;
-  String get strInstructions => throw _privateConstructorUsedError;
+  String? get idMeal => throw _privateConstructorUsedError;
+  String? get strMealThumb => throw _privateConstructorUsedError;
+  String? get strInstructions => throw _privateConstructorUsedError;
+  String? get strTags => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,11 @@ abstract class $CoockingMealCopyWith<$Res> {
           CoockingMeal value, $Res Function(CoockingMeal) then) =
       _$CoockingMealCopyWithImpl<$Res, CoockingMeal>;
   @useResult
-  $Res call({String idMeal, String idMstrMealThumbeal, String strInstructions});
+  $Res call(
+      {String? idMeal,
+      String? strMealThumb,
+      String? strInstructions,
+      String? strTags});
 }
 
 /// @nodoc
@@ -52,23 +57,28 @@ class _$CoockingMealCopyWithImpl<$Res, $Val extends CoockingMeal>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? idMeal = null,
-    Object? idMstrMealThumbeal = null,
-    Object? strInstructions = null,
+    Object? idMeal = freezed,
+    Object? strMealThumb = freezed,
+    Object? strInstructions = freezed,
+    Object? strTags = freezed,
   }) {
     return _then(_value.copyWith(
-      idMeal: null == idMeal
+      idMeal: freezed == idMeal
           ? _value.idMeal
           : idMeal // ignore: cast_nullable_to_non_nullable
-              as String,
-      idMstrMealThumbeal: null == idMstrMealThumbeal
-          ? _value.idMstrMealThumbeal
-          : idMstrMealThumbeal // ignore: cast_nullable_to_non_nullable
-              as String,
-      strInstructions: null == strInstructions
+              as String?,
+      strMealThumb: freezed == strMealThumb
+          ? _value.strMealThumb
+          : strMealThumb // ignore: cast_nullable_to_non_nullable
+              as String?,
+      strInstructions: freezed == strInstructions
           ? _value.strInstructions
           : strInstructions // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      strTags: freezed == strTags
+          ? _value.strTags
+          : strTags // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +91,11 @@ abstract class _$$_CoockingMealCopyWith<$Res>
       __$$_CoockingMealCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String idMeal, String idMstrMealThumbeal, String strInstructions});
+  $Res call(
+      {String? idMeal,
+      String? strMealThumb,
+      String? strInstructions,
+      String? strTags});
 }
 
 /// @nodoc
@@ -95,23 +109,28 @@ class __$$_CoockingMealCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? idMeal = null,
-    Object? idMstrMealThumbeal = null,
-    Object? strInstructions = null,
+    Object? idMeal = freezed,
+    Object? strMealThumb = freezed,
+    Object? strInstructions = freezed,
+    Object? strTags = freezed,
   }) {
     return _then(_$_CoockingMeal(
-      idMeal: null == idMeal
+      idMeal: freezed == idMeal
           ? _value.idMeal
           : idMeal // ignore: cast_nullable_to_non_nullable
-              as String,
-      idMstrMealThumbeal: null == idMstrMealThumbeal
-          ? _value.idMstrMealThumbeal
-          : idMstrMealThumbeal // ignore: cast_nullable_to_non_nullable
-              as String,
-      strInstructions: null == strInstructions
+              as String?,
+      strMealThumb: freezed == strMealThumb
+          ? _value.strMealThumb
+          : strMealThumb // ignore: cast_nullable_to_non_nullable
+              as String?,
+      strInstructions: freezed == strInstructions
           ? _value.strInstructions
           : strInstructions // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      strTags: freezed == strTags
+          ? _value.strTags
+          : strTags // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -120,23 +139,23 @@ class __$$_CoockingMealCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CoockingMeal implements _CoockingMeal {
   const _$_CoockingMeal(
-      {required this.idMeal,
-      required this.idMstrMealThumbeal,
-      required this.strInstructions});
+      {this.idMeal, this.strMealThumb, this.strInstructions, this.strTags});
 
   factory _$_CoockingMeal.fromJson(Map<String, dynamic> json) =>
       _$$_CoockingMealFromJson(json);
 
   @override
-  final String idMeal;
+  final String? idMeal;
   @override
-  final String idMstrMealThumbeal;
+  final String? strMealThumb;
   @override
-  final String strInstructions;
+  final String? strInstructions;
+  @override
+  final String? strTags;
 
   @override
   String toString() {
-    return 'CoockingMeal(idMeal: $idMeal, idMstrMealThumbeal: $idMstrMealThumbeal, strInstructions: $strInstructions)';
+    return 'CoockingMeal(idMeal: $idMeal, strMealThumb: $strMealThumb, strInstructions: $strInstructions, strTags: $strTags)';
   }
 
   @override
@@ -145,16 +164,17 @@ class _$_CoockingMeal implements _CoockingMeal {
         (other.runtimeType == runtimeType &&
             other is _$_CoockingMeal &&
             (identical(other.idMeal, idMeal) || other.idMeal == idMeal) &&
-            (identical(other.idMstrMealThumbeal, idMstrMealThumbeal) ||
-                other.idMstrMealThumbeal == idMstrMealThumbeal) &&
+            (identical(other.strMealThumb, strMealThumb) ||
+                other.strMealThumb == strMealThumb) &&
             (identical(other.strInstructions, strInstructions) ||
-                other.strInstructions == strInstructions));
+                other.strInstructions == strInstructions) &&
+            (identical(other.strTags, strTags) || other.strTags == strTags));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, idMeal, idMstrMealThumbeal, strInstructions);
+      Object.hash(runtimeType, idMeal, strMealThumb, strInstructions, strTags);
 
   @JsonKey(ignore: true)
   @override
@@ -172,19 +192,22 @@ class _$_CoockingMeal implements _CoockingMeal {
 
 abstract class _CoockingMeal implements CoockingMeal {
   const factory _CoockingMeal(
-      {required final String idMeal,
-      required final String idMstrMealThumbeal,
-      required final String strInstructions}) = _$_CoockingMeal;
+      {final String? idMeal,
+      final String? strMealThumb,
+      final String? strInstructions,
+      final String? strTags}) = _$_CoockingMeal;
 
   factory _CoockingMeal.fromJson(Map<String, dynamic> json) =
       _$_CoockingMeal.fromJson;
 
   @override
-  String get idMeal;
+  String? get idMeal;
   @override
-  String get idMstrMealThumbeal;
+  String? get strMealThumb;
   @override
-  String get strInstructions;
+  String? get strInstructions;
+  @override
+  String? get strTags;
   @override
   @JsonKey(ignore: true)
   _$$_CoockingMealCopyWith<_$_CoockingMeal> get copyWith =>

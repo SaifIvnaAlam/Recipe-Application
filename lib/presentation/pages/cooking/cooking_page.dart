@@ -13,7 +13,7 @@ class CookingPage extends StatelessWidget {
       body: BlocBuilder<CookingCubit, CookingState>(
         builder: (context, state) {
           return state.map(loading: (_) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           }, loaded: (value) {
@@ -22,10 +22,16 @@ class CookingPage extends StatelessWidget {
                 itemCount: cooking.length,
                 itemBuilder: (context, index) {
                   final data = cooking[index];
-                  return Text(data.idMeal);
+                  return Column(
+                    children: [
+                      Image.network(data.strMealThumb!),
+                      Text(data.idMeal!),
+                      Text(data.strInstructions!)
+                    ],
+                  );
                 });
           }, error: (_) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           });
