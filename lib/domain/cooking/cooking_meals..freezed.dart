@@ -24,6 +24,7 @@ mixin _$CoockingMeal {
   String? get strMealThumb => throw _privateConstructorUsedError;
   String? get strInstructions => throw _privateConstructorUsedError;
   String? get strTags => throw _privateConstructorUsedError;
+  String? get strYoutube => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +42,8 @@ abstract class $CoockingMealCopyWith<$Res> {
       {String? idMeal,
       String? strMealThumb,
       String? strInstructions,
-      String? strTags});
+      String? strTags,
+      String? strYoutube});
 }
 
 /// @nodoc
@@ -61,6 +63,7 @@ class _$CoockingMealCopyWithImpl<$Res, $Val extends CoockingMeal>
     Object? strMealThumb = freezed,
     Object? strInstructions = freezed,
     Object? strTags = freezed,
+    Object? strYoutube = freezed,
   }) {
     return _then(_value.copyWith(
       idMeal: freezed == idMeal
@@ -79,6 +82,10 @@ class _$CoockingMealCopyWithImpl<$Res, $Val extends CoockingMeal>
           ? _value.strTags
           : strTags // ignore: cast_nullable_to_non_nullable
               as String?,
+      strYoutube: freezed == strYoutube
+          ? _value.strYoutube
+          : strYoutube // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -95,7 +102,8 @@ abstract class _$$_CoockingMealCopyWith<$Res>
       {String? idMeal,
       String? strMealThumb,
       String? strInstructions,
-      String? strTags});
+      String? strTags,
+      String? strYoutube});
 }
 
 /// @nodoc
@@ -113,6 +121,7 @@ class __$$_CoockingMealCopyWithImpl<$Res>
     Object? strMealThumb = freezed,
     Object? strInstructions = freezed,
     Object? strTags = freezed,
+    Object? strYoutube = freezed,
   }) {
     return _then(_$_CoockingMeal(
       idMeal: freezed == idMeal
@@ -131,6 +140,10 @@ class __$$_CoockingMealCopyWithImpl<$Res>
           ? _value.strTags
           : strTags // ignore: cast_nullable_to_non_nullable
               as String?,
+      strYoutube: freezed == strYoutube
+          ? _value.strYoutube
+          : strYoutube // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -139,7 +152,11 @@ class __$$_CoockingMealCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CoockingMeal implements _CoockingMeal {
   const _$_CoockingMeal(
-      {this.idMeal, this.strMealThumb, this.strInstructions, this.strTags});
+      {this.idMeal,
+      this.strMealThumb,
+      this.strInstructions,
+      this.strTags,
+      this.strYoutube});
 
   factory _$_CoockingMeal.fromJson(Map<String, dynamic> json) =>
       _$$_CoockingMealFromJson(json);
@@ -152,10 +169,12 @@ class _$_CoockingMeal implements _CoockingMeal {
   final String? strInstructions;
   @override
   final String? strTags;
+  @override
+  final String? strYoutube;
 
   @override
   String toString() {
-    return 'CoockingMeal(idMeal: $idMeal, strMealThumb: $strMealThumb, strInstructions: $strInstructions, strTags: $strTags)';
+    return 'CoockingMeal(idMeal: $idMeal, strMealThumb: $strMealThumb, strInstructions: $strInstructions, strTags: $strTags, strYoutube: $strYoutube)';
   }
 
   @override
@@ -168,13 +187,15 @@ class _$_CoockingMeal implements _CoockingMeal {
                 other.strMealThumb == strMealThumb) &&
             (identical(other.strInstructions, strInstructions) ||
                 other.strInstructions == strInstructions) &&
-            (identical(other.strTags, strTags) || other.strTags == strTags));
+            (identical(other.strTags, strTags) || other.strTags == strTags) &&
+            (identical(other.strYoutube, strYoutube) ||
+                other.strYoutube == strYoutube));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, idMeal, strMealThumb, strInstructions, strTags);
+  int get hashCode => Object.hash(
+      runtimeType, idMeal, strMealThumb, strInstructions, strTags, strYoutube);
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +216,8 @@ abstract class _CoockingMeal implements CoockingMeal {
       {final String? idMeal,
       final String? strMealThumb,
       final String? strInstructions,
-      final String? strTags}) = _$_CoockingMeal;
+      final String? strTags,
+      final String? strYoutube}) = _$_CoockingMeal;
 
   factory _CoockingMeal.fromJson(Map<String, dynamic> json) =
       _$_CoockingMeal.fromJson;
@@ -208,6 +230,8 @@ abstract class _CoockingMeal implements CoockingMeal {
   String? get strInstructions;
   @override
   String? get strTags;
+  @override
+  String? get strYoutube;
   @override
   @JsonKey(ignore: true)
   _$$_CoockingMealCopyWith<_$_CoockingMeal> get copyWith =>

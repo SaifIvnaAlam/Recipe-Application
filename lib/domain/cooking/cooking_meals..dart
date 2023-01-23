@@ -10,6 +10,7 @@ class CoockingMeal with _$CoockingMeal {
     String? strMealThumb,
     String? strInstructions,
     String? strTags,
+    String? strYoutube,
   }) = _CoockingMeal;
 
   factory CoockingMeal.fromJson(Map<String, dynamic> json) =>

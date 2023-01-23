@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipe_app/application/categories/cubit/categories_cubit.dart';
+import 'package:recipe_app/presentation/components/recipe_card.dart';
 import 'package:recipe_app/presentation/pages/meals/meal_page.dart';
 import 'package:recipe_app/presentation/util/item_widget.dart';
 
@@ -46,8 +47,7 @@ class HomePage extends StatelessWidget {
                             ),
                           );
                         },
-                        child: ItemWidgets(
-                            image: ctgry.strCategoryThumb, name: name))
+                        child: RecipeCard(category: ctgry))
                   ],
                 );
               },

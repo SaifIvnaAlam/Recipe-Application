@@ -12,6 +12,7 @@ _$_CoockingMeal _$$_CoockingMealFromJson(Map<String, dynamic> json) =>
       strMealThumb: json['strMealThumb'] as String?,
       strInstructions: json['strInstructions'] as String?,
       strTags: json['strTags'] as String?,
+      strYoutube: json['strYoutube'] as String?,
     );
 
 Map<String, dynamic> _$$_CoockingMealToJson(_$_CoockingMeal instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$_CoockingMealToJson(_$_CoockingMeal instance) =>
       'strMealThumb': instance.strMealThumb,
       'strInstructions': instance.strInstructions,
       'strTags': instance.strTags,
+      'strYoutube': instance.strYoutube,
     };
