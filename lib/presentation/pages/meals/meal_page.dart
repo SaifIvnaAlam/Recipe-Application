@@ -76,15 +76,16 @@ class MealPage extends StatelessWidget {
                                   ),
                                 ),
                                 Positioned(
-                                  bottom: 6,
+                                  bottom: 4,
                                   child: Container(
                                     width: 500,
-                                    height: 20,
+                                    height: 30,
                                     decoration: const BoxDecoration(
-                                        color: Colors.blueGrey),
+                                        color:
+                                            Color.fromARGB(255, 74, 94, 104)),
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          horizontal: 20),
+                                          horizontal: 5, vertical: 5),
                                       child: Text(mealdata.strMeal,
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
