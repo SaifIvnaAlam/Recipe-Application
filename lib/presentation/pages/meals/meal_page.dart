@@ -49,32 +49,57 @@ class MealPage extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Stack(
-                            children: [
-                              Positioned(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(12),
-                                  child: SizedBox(
-                                      child: Image.network(
-                                    mealdata.strMealThumb,
-                                    fit: BoxFit.cover,
-                                  )),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CookingPage(
+                                    id: mealdata.idMeal,
+                                  ),
                                 ),
-                              )
-                            ],
+                              );
+                            },
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(12),
+                                    child: SizedBox(
+                                        child: Image.network(
+                                      mealdata.strMealThumb,
+                                      fit: BoxFit.cover,
+                                    )),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 6,
+                                  child: Container(
+                                    width: 500,
+                                    height: 20,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.blueGrey),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20),
+                                      child: Text(mealdata.strMeal,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: kEncodeSansBold.copyWith(
+                                            color: kWhite,
+                                          )),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 5,
                           ),
-                          Text(mealdata.strMeal,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: kEncodeSansBold.copyWith(
-                                color: kDarkBrown,
-                              ))
                         ],
                       );
                     },
