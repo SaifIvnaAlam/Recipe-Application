@@ -22,15 +22,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
               Colors.orange.shade400,
               Colors.orange.shade600,
               Colors.orange.shade700,
               Colors.orange.shade800,
-            ])),
+            ],
+          ),
+        ),
         child: BlocBuilder<CategoriesCubit, CategoriesState>(
           builder: (context, state) {
             return state.map(loading: (_) {
@@ -90,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                               style: kEncodeSansSemiBold.copyWith(
                                   color: kDarkBrown,
                                   fontSize:
-                                      SizeConfig.blockSizeHorizontal! * 3))
+                                      SizeConfig.blockSizeHorizontal! * 4.5))
                         ],
                       );
                     },
