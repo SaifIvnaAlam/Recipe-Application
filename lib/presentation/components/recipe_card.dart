@@ -5,27 +5,20 @@ import 'package:recipe_app/domain/cooking/coocking.dart';
 import '../../domain/category.dart';
 
 class RecipeCard extends StatelessWidget {
-  const RecipeCard({Key? key, this.active, this.index, required this.category})
-      : super(key: key);
+  const RecipeCard({Key? key, required this.category}) : super(key: key);
 
-  final bool? active;
-  final int? index;
   final Categories category;
 
   @override
   Widget build(BuildContext context) {
-    final double blur = active! ? 16 : 0;
-    final double offset = active! ? 4 : 0;
-    final double top = active! ? 0 : 46;
-
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeOutQuint,
       margin: EdgeInsets.only(
-        top: top,
+        top: 20,
         bottom: 0,
         right: 15.5,
-        left: active! ? 32.5 : 0,
+        left: 32.5,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),
@@ -33,12 +26,12 @@ class RecipeCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black87.withOpacity(0.1),
-            blurRadius: blur,
-            offset: Offset(0, offset),
+            blurRadius: 20,
+            offset: Offset(0, 20),
           )
         ],
         image: DecorationImage(
-            fit: BoxFit.cover, image: Image.network(category.strCategoryThumb)),
+            fit: BoxFit.cover, image: NetworkImage(category.strCategoryThumb)),
       ),
       child: Stack(
         children: [
@@ -66,19 +59,19 @@ class RecipeCard extends StatelessWidget {
                 top: 10,
               ),
               height: 87,
-              decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(32),
                 bottomRight: Radius.circular(32),
               )),
               child: Text(
-                "Name of the thing",
+                category.strCategory,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
