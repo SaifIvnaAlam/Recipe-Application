@@ -1,16 +1,39 @@
-# recipe_app
+# Recipe App
 
-A new Flutter project.
+Discover the culinary world with Recipe App, the ultimate cooking companion for foodies and home chefs! Say goodbye to boring meals and hello to an endless array of delicious and easy-to-follow recipes. From classic comfort food to exotic international dishes, Recipe App has got you covered.
 
-## Getting Started
+## About Recipe App
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+- User-friendly interface for browsing recipes
+- Detailed Instructions
+- Watch tutorial
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Mockup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+![Apple iPhone 11 Pro Max Presentation](https://user-images.githubusercontent.com/73099787/216777001-e540aec5-65ef-449b-97c3-61b191639806.png)
+
+### Techstack
+
+---
+
+> `Dart ` > `Flutter` > `RestApi`
+
+### How to Install
+
+---
+
+- Fist clone the repo
+  > `git clone https://github.com/SaifIvnaAlam/Habit-Tracker-HeatMap.git`
+- Open project in IDE
+
+- Get necessary packages
+  > `flutter pub get`
+- Run project
+
+---
+
+### Made with ❤️ by >[Saif ivna alam](https://saifivan.vercel.app/)
