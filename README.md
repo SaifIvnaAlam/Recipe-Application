@@ -36,4 +36,4 @@ Discover the culinary world with Recipe App, the ultimate cooking companion for 
 
 ---
 
-### Made with ❤️ by >[Saif ivna alam](https://saifivan.vercel.app/)
+### Made with ❤️ by [_Saif ivna alam_](https://saifivan.vercel.app/)
