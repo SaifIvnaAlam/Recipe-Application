@@ -26,7 +26,7 @@ Discover the culinary world with Recipe App, the ultimate cooking companion for 
 
 ---
 
-- Fist clone the repo
+- First clone the repo
   > `git clone https://github.com/SaifIvnaAlam/Habit-Tracker-HeatMap.git`
 - Open project in IDE
 
