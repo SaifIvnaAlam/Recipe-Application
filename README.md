@@ -27,9 +27,10 @@ Discover the culinary world with Recipe App, the ultimate cooking companion for 
 ---
 
 - First clone the repo
-  > `git clone https://github.com/SaifIvnaAlam/Habit-Tracker-HeatMap.git`
+  > `git clone
 - Open project in IDE
-
+- Clear the disk space
+  > `flutter clean`
 - Get necessary packages
   > `flutter pub get`
 - Run project
